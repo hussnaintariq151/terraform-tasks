@@ -1,0 +1,14 @@
+What is an AMI?
+                    AMI = Amazon Machine Image       -------->  It’s basically a template for an EC2 instance
+        Contains:
+                    OS (Amazon Linux, Ubuntu, Windows, etc.)
+                    Pre-installed software
+                    When you launch an EC2, AWS uses an AMI to create your virtual machine
+                    Think of it as a blueprint or snapshot of a server.
+---------------------------
+    AWS CLI command to get the list of all Amazon Linux 2 AMIs in the us-east-2 region that match the free-tier-compatible pattern
+
+    aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-2.0.*-x86_64-gp2" --query "Images[*].[ImageId,Name]" --region us-east-2
+
+-----------------------------
+
